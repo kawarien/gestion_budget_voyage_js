@@ -15,6 +15,7 @@ export function func_travelers(main, travelersList) {
       const li = document.createElement("li");
       const input = document.createElement("input");
       input.type = "text";
+      input.className = "input-class";
       const label = document.createElement("label");
       label.innerHTML = "Add spent : ";
       const total = document.createElement('label');
@@ -23,12 +24,15 @@ export function func_travelers(main, travelersList) {
       const addSpent = document.createElement("button");
       const buttonText = document.createTextNode("Add");
       addSpent.appendChild(buttonText);
+      addSpent.setAttribute("style", "background-color:#4CAF50; color: white; font-size:16px; border-radius:5px");
       const content = document.createTextNode(travelers);
       li.appendChild(content);
       ul.appendChild(li);
       ul.appendChild(label);
       ul.appendChild(input);
       ul.appendChild(total);
+      ul.appendChild(br);
+      ul.appendChild(br);
       ul.appendChild(br);
       ul.appendChild(addSpent);
 
@@ -58,7 +62,7 @@ export function func_travelers(main, travelersList) {
 
 
         if (state.value.trim() === '') {
-            total.innerHTML = '<span class="warning">champ est vide ou c pas un nombre</span>';
+            total.innerHTML = '<span class="warning"> Champ vide ou c\'est pas un nombre</span>';
 
             return;
         }

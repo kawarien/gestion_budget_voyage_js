@@ -1,4 +1,6 @@
+import "./style.scss";
 import { func_travelers } from "./core/utils"; 
+
 
 import * as Traveler from "./core/travelers"; 
 

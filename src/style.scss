@@ -1,0 +1,14 @@
+$body-color: #000000;
+$bg-color : #f5eaea;
+body {
+  color: $body-color;
+  background-color: $bg-color;
+}
+
+.center{
+    text-align: center;
+    color: red;
+}
+.input-class {
+    color: green;
+}
