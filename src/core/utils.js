@@ -15,22 +15,11 @@ export function func_travelers(main, travelersList) {
         return button;
       }
        
-      const btn = createButtonCalc('Calculer');
-      btn.addEventListener("click", (e) => {
-
-        let text = '';
-        for (let i = 0; i < 4; i++ ) {
-        text += travelersList[i] + '<br>total : ' + 200 +'<br>'+'crédit : '+ 20 +'<br><br>' ;
-        i == i+1;
-        }
-        resLabel.innerHTML = ('Montant total du voyage : ' + 270 + ' euros coût est de '+ 270/4 + ' euros par participant <br><br>' + text)
-        main.appendChild(resLabel)
-        
-      });
-      main.appendChild(btn);
+      
     
-    var totalSumm = 0;
+    
     for (const travelers of travelersList) {
+      var totalDefault = 0;
       const li = document.createElement("li");
       const input = document.createElement("input");
       input.type = "text";
@@ -38,7 +27,7 @@ export function func_travelers(main, travelersList) {
       const label = document.createElement("label");
       label.innerHTML = "Add spent : ";
       const total = document.createElement('label');
-      total.innerHTML = " Total : " + totalSumm;
+      total.innerHTML = " Total : " + totalDefault;
       const br = document.createElement("br");
       const btnAdd = createButtonCalc('Add');
       const content = document.createTextNode(travelers);
@@ -62,6 +51,7 @@ export function func_travelers(main, travelersList) {
     });
 
     let toggle = false;
+    var inputNumber = 0;
     btnAdd.addEventListener('click', () => {
         // j'ai verifi si c'est un nombre qui a été saisi  
         if (isNaN(state.value) || state.value.trim() === '') {
@@ -69,7 +59,7 @@ export function func_travelers(main, travelersList) {
             return;
         }
         
-        var inputNumber = parseInt(state.value);
+        inputNumber = parseInt(state.value);
         console.log('input number', inputNumber);
         total.innerHTML =  `Total : ${inputNumber}`;
          
@@ -87,7 +77,22 @@ export function func_travelers(main, travelersList) {
         //   }
 
     });
+
+    
     
     }
+    const btn = createButtonCalc('Calculer');
+      btn.addEventListener("click", (e) => {
+
+        let text = '';
+        for (let i = 0; i < 4; i++ ) {
+        text += travelersList[i] + '<br>total : ' + inputNumber +'<br>'+'crédit : '+ inputNumber +'<br><br>' ;
+        i == i+1;
+        }
+        resLabel.innerHTML = ('Montant total du voyage : ' + inputNumber + ' euros coût est de '+ inputNumber/4 + ' euros par participant <br><br>' + text)
+        main.appendChild(resLabel);
+        
+      });
+      main.appendChild(btn);
     main.appendChild(ul);
   }
