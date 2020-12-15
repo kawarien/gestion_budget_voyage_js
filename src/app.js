@@ -1,5 +1,19 @@
-import parser from './core/utils';
-import "babel-polyfill";
+import { func_travelers } from "./core/utils"; 
 
- console.log("App.js")
- console.log(parser("Bonjour tout le monde"));
+import * as Traveler from "./core/travelers"; 
+
+const main = document.getElementById("main");
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  let {
+    travelers,
+  } = Traveler;
+
+  const travelersList = travelers;
+
+
+
+  func_travelers(main, travelersList);
+
+
+});

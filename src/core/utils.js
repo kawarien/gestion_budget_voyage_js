@@ -1,5 +1,13 @@
+export function func_travelers(main, travelersList) {
 
-export default  (str) => {
+    const ul = document.createElement("ul");
+  
+    for (const travelers of travelersList) {
+      const li = document.createElement("li");
+      const content = document.createTextNode(travelers);
+      li.appendChild(content);
+      ul.appendChild(li);
+    }
 
-    console.log(str.split(''));
-}
+    main.appendChild(ul);
+  }
