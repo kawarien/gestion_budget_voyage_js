@@ -13,9 +13,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   const travelersList = travelers;
 
-
-
   func_travelers(main, travelersList);
-
 
 });
